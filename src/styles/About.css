@@ -1,0 +1,161 @@
+.about-section {
+  color: #fff;
+  background: #0f0f0f;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.about-hero {
+  position: relative;
+  height: 60vh;
+  background: url("../assets/welder1.gif") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero .overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  color: #ff0000;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  color: #f2f2f2;
+  font-weight: 300;
+}
+
+/* Content Section */
+.about-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.about-container h2 {
+  color: #ff0000;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.about-container .intro {
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 50px;
+}
+
+/* Highlights */
+.highlights {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.highlight {
+  flex: 1;
+  min-width: 280px;
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.3);
+}
+
+.highlight .icon {
+  font-size: 2.2rem;
+  color: #ff0000;
+  margin-bottom: 10px;
+}
+
+.highlight h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.highlight p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Call To Action */
+.cta {
+  margin-top: 50px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #ff0000;
+  color: #fff;
+  padding: 14px 35px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #ff3333;
+  transform: scale(1.05);
+}
+
+.contact-info {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* ✅ Responsive */
+@media (max-width: 992px) {
+  .about-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .highlights {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .highlight {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero {
+    height: 50vh;
+  }
+
+  .about-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+}

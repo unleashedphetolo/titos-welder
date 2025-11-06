@@ -1,0 +1,124 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  z-index: 10;
+}
+
+
+
+.hamburger {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #444;
+}
+
+.brand-name {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #0843a2;
+  }
+  
+  .slogan {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #000000;
+  }
+.navbar-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto; 
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li {
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    text-decoration: none;
+  }
+}
+
+/* Desktops */
+.desktop-icons {
+  display: none;
+  gap: 15px;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.desktop-icons .icon {
+  cursor: pointer;
+  color: #333;
+}
+
+@media (min-width: 768px) {
+  .desktop-icons {
+    display: flex;
+  }
+}
+
+ 
+  .nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: #0843a2;
+  }
+  
+  .nav-icon {
+    position: relative;
+    font-size: 1.5rem;
+    color: #0843a2;
+    transition: color 0.2s;
+  }
+  
+  .nav-icon:hover {
+    color: #c52b3a;
+  }
+  /* wishlist */
+
+  .nav-links a,
+.logo-link {
+  text-decoration: none;
+  color: #0843a2;
+  font-weight: 600;
+}
+
+.nav-links a:hover,
+.logo-link:hover {
+  text-decoration: none;
+  color: #000;
+}
+

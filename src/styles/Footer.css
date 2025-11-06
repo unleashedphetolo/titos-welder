@@ -1,0 +1,39 @@
+.footer {
+  background: #0b2139;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.social-icons a {
+  color: #ff4400;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  text-decoration: underline;
+}
+
+.powered-by {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.ulterspace-link {
+  display: flex;
+  align-items: center;
+  color: #61dafb;
+  text-decoration: none;
+  gap: 6px;
+}
+
+.ulterspace-logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+}

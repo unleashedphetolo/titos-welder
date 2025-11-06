@@ -1,0 +1,25 @@
+.services {
+  text-align: center;
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+}
+
+.services-list li {
+  background: #fff;
+  margin: 10px auto;
+  padding: 15px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.contact-number {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #4b2c20;
+  font-weight: bold;
+}
