@@ -1,4 +1,4 @@
-import React, { useState } from "react"; 
+import React, { useState, useEffect } from "react"; 
 import ProductCard from "../components/ProductCard";
 import "../styles/Home.css";
 
@@ -8,6 +8,8 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Contact from "./Contact";
+import About from "./About";
 
 const dummyServices = [
   {
@@ -54,165 +56,167 @@ const dummyServices = [
   },
 ];
 
-
 const Home = () => {
-  
-  const [search, setSearch] = useState("");
+  const [search] = useState("");
+  const [showScroll, setShowScroll] = useState(false);
 
   const filteredProducts = dummyServices.filter(p => {
     const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase());
-    return  matchesSearch;
+    return matchesSearch;
   });
+
+  // Show scroll-to-top button when scrolling down
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScroll(true);
+      } else {
+        setShowScroll(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="home-page">
 
-     {/* ===== Hero Slider ===== */}
-<section className="hero-slider">
-  <Swiper
-    modules={[Navigation, Pagination, Autoplay]}
-    navigation
-    pagination={{ clickable: true }}
-    autoplay={{ delay: 3500 }}
-    loop
-  >
-    <SwiperSlide>
-      <div
-        className="hero-slide"
-        style={{ backgroundImage: "url('/assets/gate12.png')" }}
-      >
-        <div className="overlay">
-          <h2>Custom Steel Gates</h2>
-          <p>Strong, secure, and stylish gates designed for your home or business.</p>
-          <a
-            href="https://wa.me/27838833388"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="quote-btn"
-          >
-            Get a Quote
-          </a>
-        </div>
-      </div>
-    </SwiperSlide>
+      {/* ===== Hero Slider ===== */}
+      <section className="hero-slider">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3500 }}
+          loop
+        >
+          <SwiperSlide>
+            <div
+              className="hero-slide"
+              style={{ backgroundImage: "url('/assets/gate12.png')" }}
+            >
+              <div className="overlay">
+                <h2>Custom Steel Gates</h2>
+                <p>Strong, secure, and stylish gates designed for your home or business.</p>
+                <a
+                  href="https://wa.me/27838833388"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="quote-btn"
+                >
+                  Get a Quote
+                </a>
+              </div>
+            </div>
+          </SwiperSlide>
 
-    <SwiperSlide>
-      <div
-        className="hero-slide"
-        style={{ backgroundImage: "url('/assets/burglar.jpg')" }}
-      >
-        <div className="overlay">
-          <h2>Burglar Proofing</h2>
-          <p>Protect your family and property with durable burglar bars and safety doors.</p>
-          <a
-            href="https://wa.me/27838833388"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="quote-btn"
-          >
-            Get a Quote
-          </a>
-        </div>
-      </div>
-    </SwiperSlide>
+          <SwiperSlide>
+            <div
+              className="hero-slide"
+              style={{ backgroundImage: "url('/assets/burglar.jpg')" }}
+            >
+              <div className="overlay">
+                <h2>Burglar Proofing</h2>
+                <p>Protect your family and property with durable burglar bars and safety doors.</p>
+                <a
+                  href="https://wa.me/27838833388"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="quote-btn"
+                >
+                  Get a Quote
+                </a>
+              </div>
+            </div>
+          </SwiperSlide>
 
-    <SwiperSlide>
-      <div
-        className="hero-slide"
-        style={{ backgroundImage: "url('/assets/carport.jpg')" }}
-      >
-        <div className="overlay">
-          <h2>Car Ports & Shades</h2>
-          <p>Stylish carports built to protect your vehicles from the elements.</p>
-          <a
-            href="https://wa.me/27838833388"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="quote-btn"
-          >
-            Get a Quote
-          </a>
-        </div>
-      </div>
-    </SwiperSlide>
+          <SwiperSlide>
+            <div
+              className="hero-slide"
+              style={{ backgroundImage: "url('/assets/carport.jpg')" }}
+            >
+              <div className="overlay">
+                <h2>Car Ports & Shades</h2>
+                <p>Stylish carports built to protect your vehicles from the elements.</p>
+                <a
+                  href="https://wa.me/27838833388"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="quote-btn"
+                >
+                  Get a Quote
+                </a>
+              </div>
+            </div>
+          </SwiperSlide>
 
-    <SwiperSlide>
-      <div
-        className="hero-slide"
-        style={{ backgroundImage: "url('/assets/slide.jpg')" }}
-      >
-        <div className="overlay">
-          <h2>Sliding Burglar Doors</h2>
-          <p>Easy-slide steel doors that combine safety and convenience.</p>
-          <a
-            href="https://wa.me/27838833388"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="quote-btn"
-          >
-            Get a Quote
-          </a>
-        </div>
-      </div>
-    </SwiperSlide>
+          <SwiperSlide>
+            <div
+              className="hero-slide"
+              style={{ backgroundImage: "url('/assets/slide.jpg')" }}
+            >
+              <div className="overlay">
+                <h2>Sliding Burglar Doors</h2>
+                <p>Easy-slide steel doors that combine safety and convenience.</p>
+                <a
+                  href="https://wa.me/27838833388"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="quote-btn"
+                >
+                  Get a Quote
+                </a>
+              </div>
+            </div>
+          </SwiperSlide>
 
-    <SwiperSlide>
-      <div
-        className="hero-slide"
-        style={{ backgroundImage: "url('/assets/line.jpg')" }}
-      >
-        <div className="overlay">
-          <h2>Washing Lines</h2>
-          <p>Functional and long-lasting washing lines for everyday use.</p>
-          <a
-            href="https://wa.me/27838833388"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="quote-btn"
-          >
-            Get a Quote
-          </a>
-        </div>
-      </div>
-    </SwiperSlide>
+          <SwiperSlide>
+            <div
+              className="hero-slide"
+              style={{ backgroundImage: "url('/assets/line.jpg')" }}
+            >
+              <div className="overlay">
+                <h2>Washing Lines</h2>
+                <p>Functional and long-lasting washing lines for everyday use.</p>
+                <a
+                  href="https://wa.me/27838833388"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="quote-btn"
+                >
+                  Get a Quote
+                </a>
+              </div>
+            </div>
+          </SwiperSlide>
 
-    <SwiperSlide>
-      <div
-        className="hero-slide"
-        style={{ backgroundImage: "url('/assets/balcony11.jpeg')" }}
-      >
-        <div className="overlay">
-          <h2>Balcony Railings</h2>
-          <p>Elegant, secure, and durable balcony railing solutions for all styles.</p>
-          <a
-            href="https://wa.me/27838833388"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="quote-btn"
-          >
-            Get a Quote
-          </a>
-        </div>
-      </div>
-    </SwiperSlide>
-  </Swiper>
-</section>
+          <SwiperSlide>
+            <div
+              className="hero-slide"
+              style={{ backgroundImage: "url('/assets/balcony11.jpeg')" }}
+            >
+              <div className="overlay">
+                <h2>Balcony Railings</h2>
+                <p>Elegant, secure, and durable balcony railing solutions for all styles.</p>
+                <a
+                  href="https://wa.me/27838833388"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="quote-btn"
+                >
+                  Get a Quote
+                </a>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </section>
 
       <div className="container section layout">
-        <aside className="filters-sidebar">
-         
-          {/* Search */}
-          <div className="filter-group">
-            <h4>Search</h4>
-            <input
-              type="text"
-              placeholder="Search services..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </div>
-        </aside>
-
         {/* ===== Products Grid ===== */}
         <section className="products-section">
           <h2>Our Services</h2>
@@ -238,6 +242,15 @@ const Home = () => {
           <p>Precision, Strength, and Style — Custom Steelwork Built to Last.</p>
         </div>
       </section>
+      <Contact/>
+      <About/>
+
+      {/* ===== Scroll to Top Button ===== */}
+      {showScroll && (
+        <button className="scroll-to-top" onClick={scrollToTop}>
+          ↑
+        </button>
+      )}
     </div>
   );
 };
