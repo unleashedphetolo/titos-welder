@@ -97,6 +97,24 @@ const Home = () => {
           <SwiperSlide>
             <div
               className="hero-slide"
+              style={{ backgroundImage: "url('/assets/welder1.gif')" }}
+            >
+              <div className="overlay">
+                
+                <a
+                  href="https://wa.me/27838833388"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="quote-btn"
+                >
+                  Get a Quote
+                </a>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div
+              className="hero-slide"
               style={{ backgroundImage: "url('/assets/gate12.png')" }}
             >
               <div className="overlay">
